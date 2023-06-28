@@ -28,8 +28,8 @@ class CityResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    TextInput::make('name'),
-                    Select::make('country_id')->relationship('countries', 'name')
+                    TextInput::make('name')->required(),
+                    Select::make('state_id')->relationship('states', 'name')->required()
                 ])
             ]);
     }
@@ -39,7 +39,7 @@ class CityResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')->sortable()->searchable(),
-                TextColumn::make('countries.name')->sortable()->searchable(),
+                TextColumn::make('states.name')->sortable()->searchable(),
                 TextColumn::make('created_at')->dateTime(),
             ])
             ->filters([

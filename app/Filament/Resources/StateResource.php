@@ -28,8 +28,8 @@ class StateResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    TextInput::make('name'),
-                    Select::make('country_id')->relationship('countries', 'name'),
+                    TextInput::make('name')->required(),
+                    Select::make('country_id')->relationship('countries', 'name')->required(),
                 ])
             ]);
     }

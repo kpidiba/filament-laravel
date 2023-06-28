@@ -27,7 +27,7 @@ class DepartementResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    TextInput::make('name'),
+                    TextInput::make('name')->required(),
                 ])
             ]);
     }

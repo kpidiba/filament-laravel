@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','country_id'];
-    public function countries(){
-            return $this->belongsTo(Country::class,'country_id');
+    protected $fillable = ['name','state_id'];
+    public function states(){
+            return $this->belongsTo(State::class,'state_id');
     }
 
     public function employes()

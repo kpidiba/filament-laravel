@@ -27,8 +27,8 @@ class CountryResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    TextInput::make('name'),
-                    TextInput::make('country_code')
+                    TextInput::make('name')->required(),
+                    TextInput::make('country_code')->required()
                 ])
             ]);
     }
