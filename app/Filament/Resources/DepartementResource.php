@@ -20,7 +20,9 @@ class DepartementResource extends Resource
 {
     protected static ?string $model = Departement::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static ? string $navigationGroup = 'System Management';
+    protected static ? int $navigationSort =1;
 
     public static function form(Form $form): Form
     {
