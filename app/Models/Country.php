@@ -17,12 +17,6 @@ class Country extends Model
         return $this->hasMany(State::class, 'country_id');
     }
 
-    public function cities()
-    {
-        return $this->hasMany(City::class, 'country_id');
-    }
-    
-
     public function employes()
     {
         return $this->hasMany(Employe::class, 'country_id');

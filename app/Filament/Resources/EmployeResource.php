@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EmployeResource\Pages;
 use App\Filament\Resources\EmployeResource\RelationManagers;
+use App\Filament\Resources\EmployeResource\Widgets\EmployeOverview;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Employe;
@@ -81,6 +82,8 @@ class EmployeResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -91,6 +94,13 @@ class EmployeResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            EmployeOverview::class
         ];
     }
 
